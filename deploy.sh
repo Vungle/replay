@@ -12,6 +12,6 @@ then
     docker push vungle/replay:$CIRCLE_SHA1
     exit 1
   fi
-  else
-    echo "skipping push"
+else
+  echo "skipping push"
 fi
