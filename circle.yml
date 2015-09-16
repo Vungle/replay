@@ -15,3 +15,5 @@ deployment:
     branch: master
     commands:
       - ./deploy.sh
+    branch: /feature_.*/
+      - ./deploy.sh $CIRCLE_SHA1
