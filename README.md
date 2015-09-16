@@ -1,3 +1,5 @@
+[![Circle CI](https://circleci.com/gh/Vungle/replay.svg?style=svg)](https://circleci.com/gh/Vungle/replay)
+
 # Replay Logs to Kafka Topic
 
 ### How?
