@@ -1,5 +1,5 @@
 #!/bin/bash
-if  git ls-files -m | grep -q "Dockerfile"; then
+if  git ls-files -m | grep -q "Dockerfile"
 then 
   if [ -z "$1" ]
   then
