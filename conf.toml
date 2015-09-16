@@ -1,0 +1,31 @@
+[InputLog]
+type = "LogstreamerInput"
+log_directory = "/var/log/"
+file_match = '.*'
+rescan_interval = "1000ms"
+journal_directory = "/var/data/"
+priority = ["^Seq"]
+
+[OutputKafka]
+type = "KafkaOutput"
+message_matcher = "Logger == 'InputLog'"
+topic = "%ENV[KAFKA_TOPIC]"
+addrs = ["kafka:9092"]
+encoder = "PayloadEncoder"
+max_buffer_time = 1000
+
+[OutputKafka.retries]
+max_delay = "30s"
+delay = "250ms"
+max_retries = 5
+
+[PayloadEncoder]
+append_newlines = false
+prefix_ts = false
+
+[RstEncoder]
+append_newlines = false
+
+[LogOutput]
+message_matcher = "TRUE"
+encoder = "RstEncoder"

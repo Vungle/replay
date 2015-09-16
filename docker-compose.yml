@@ -1,0 +1,24 @@
+zookeeper:
+  image: vungle/zookeeper
+  ports: 
+    - "2181"
+
+kafka: 
+  image: vungle/kafka
+  ports:
+    - "9092"
+  links: 
+    - zookeeper:zk
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+  environment:          
+    KAFKA_CREATE_TOPICS: "inf-statsd:1:1"
+replay:
+  image: vungle/replay
+  links:
+    - kafka:kafka
+  restart: always
+  volumes:
+    - "./log:/var/log/"
+  environment:
+    KAFKA_TOPIC: "as-requestAds"
