@@ -5,7 +5,6 @@ dependencies:
   override:
     - docker info
     - ./build.sh
-
 test:
   override:
     - echo "no test yet but should use docker-compose to spin up kafka,zookeeper and replay and consume a test log"
@@ -14,7 +13,7 @@ deployment:
   hub:
     branch: master
     commands:
-      - ./deploy.sh
+      - ./deploy.sh master
     branch: /feature_.*/
     commands:
       - ./deploy.sh $CIRCLE_SHA1

@@ -3,7 +3,7 @@ git diff-tree --no-commit-id --name-only -r $(git rev-parse HEAD) | grep "Docker
 if [ $? -eq 0 ]
 then
   docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-  if [ -z "$1" ]
+  if $CIRCLE_BRANCH == "master"
   then 
     echo "Pushing to latest"
     docker push vungle/replay
