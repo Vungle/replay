@@ -10,10 +10,11 @@ test:
     - echo "no test yet but should use docker-compose to spin up kafka,zookeeper and replay and consume a test log"
 
 deployment:
-  hub:
+  prod:
     branch: master
     commands:
       - ./deploy.sh master
+  test:
     branch: /feature_.*/
     commands:
       - ./deploy.sh $CIRCLE_SHA1
