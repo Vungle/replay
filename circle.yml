@@ -4,7 +4,7 @@ machine:
 dependencies:
   override:
     - docker info
-    - /.build.sh
+    - ./build.sh
 
 test:
   override:
