@@ -7,7 +7,7 @@
 You need to have docker-machine & docker compose installed. You can get everything you need installed using the docker toolbox:
 https://www.docker.com/toolbox
 
-### How?
+### Setup
 
 1. Clone and set kafka topic in the docker-compose.yml
 
@@ -16,8 +16,25 @@ https://www.docker.com/toolbox
 
 1. Set your code to read from the kafka server `$(docker-machine ip dev):9092"`
 
-1. from this directory run `docker-compose up && sleep 5 && docker-compose logs`
+### Running
+
+From the current directory run `docker-compose up && docker-compose logs replay` then you should see heka output showing its consuming the logs and inserting into your kafka topic
+
+### Stopping & Cleanup
+
+From the current directory run `docker-compose kill && docker-compose rm --force`
 
 ### Results
 
-All logs in the log directory will be ingested by heka and inserted into the kafka topic specified
+![](http://d.pr/i/15tFg.gif)
+
+### Helpful Aliases:
+
+```
+alias dc="docker-compose"
+alias dc_clear="dc kill && dc rm --force"
+alias dm="docker-machine"
+alias dmip="docker-machine ip dev"
+alias dcup="dc up -d && sleep 5 && dc logs"
+alias dcl="dc logs"
+```
