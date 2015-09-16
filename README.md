@@ -2,6 +2,11 @@
 
 # Replay Logs to Kafka Topic
 
+### PRE
+
+You need to have docker-machine & docker compose installed. You can get everything you need installed using the docker toolbox:
+https://www.docker.com/toolbox
+
 ### How?
 
 1. Clone and set kafka topic in the docker-compose.yml
