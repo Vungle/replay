@@ -2,14 +2,12 @@
 
 ### How?
 
-1. Copy the docker-compose.yml
-
-1. Create a log folder
+1. Clone and set kafka topic in the docker-compose.yml
 
 1. use s3 to download logs
-`aws s3 cp s3://vungle-logs/consumer-reportad01/consumer_reportad/consumer_reportad.out log/`
+`aws s3 cp "s3://vungle-logs/raw_logs/secor_backup/as-reportAds/dt=2015-09-15/hr=07" log --recursive`
 
-1. Set your code to read from the kafka server $(docker-machine ip dev):9092 and to topic "inf-replay"
+1. Set your code to read from the kafka server $(docker-machine ip dev):9092"
 
 1. from this directory run `docker-compose up && sleep 5 && docker-compose logs`
 
