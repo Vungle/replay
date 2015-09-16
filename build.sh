@@ -1,5 +1,5 @@
 #!/bin/bash
-git ls-files -m | grep "Dockerfile"
+git diff-tree --no-commit-id --name-only -r $(git rev-parse HEAD) | grep "Dockerfile"
 if [ $? -eq 0 ]
 then 
   if $CIRCLE_BRANCH == "master"
