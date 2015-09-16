@@ -16,4 +16,5 @@ deployment:
     commands:
       - ./deploy.sh
     branch: /feature_.*/
+    commands:
       - ./deploy.sh $CIRCLE_SHA1
