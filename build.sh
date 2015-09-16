@@ -1,7 +1,7 @@
 #!/bin/bash
 if  git ls-files -m | grep -q "Dockerfile"
 then 
-  if [ -z "$1" ]
+  if $CIRCLE_BRANCH == "master"
   then
     echo "Building latest..."
     docker build -t vungle/replay .
