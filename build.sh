@@ -1,5 +1,6 @@
 #!/bin/bash
-if git ls-files -m | grep "Dockerfile"
+git ls-files -m | grep "Dockerfile"
+if if [ $? -eq 0 ]
 then 
   if $CIRCLE_BRANCH == "master"
   then

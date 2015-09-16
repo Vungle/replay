@@ -1,5 +1,6 @@
 #!/bin/bash
-if git ls-files -m | grep "Dockerfile" 
+git ls-files -m | grep "Dockerfile" 
+if [ $? -eq 0 ]
 then
   docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
   if [ -z "$1" ]
