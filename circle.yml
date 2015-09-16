@@ -7,7 +7,7 @@ dependencies:
     - ./build.sh
 test:
   override:
-    - .test.sh
+    - ./test.sh
 
 deployment:
   prod:
