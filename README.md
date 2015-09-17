@@ -18,7 +18,9 @@ https://www.docker.com/toolbox
 
 ### Running
 
-From the current directory run `docker-compose up && docker-compose logs replay` then you should see heka output showing its consuming the logs and inserting into your kafka topic
+From the current directory run `docker-compose up -d && docker-compose logs replay` then you should see heka output showing its consuming the logs and inserting into your kafka topic
+
+***note: the replay container starts faster than kafka and zookeepr so it sometimes exits but should restart on its own***
 
 ### Stopping & Cleanup
 
