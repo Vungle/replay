@@ -7,7 +7,7 @@ dependencies:
     - ./build.sh
 test:
   override:
-    - echo "no test yet but should use docker-compose to spin up kafka,zookeeper and replay and consume a test log"
+    - ./test.sh
 
 deployment:
   prod:

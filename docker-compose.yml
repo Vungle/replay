@@ -11,8 +11,7 @@ kafka:
     - zookeeper:zk
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock
-  environment:          
-    KAFKA_CREATE_TOPICS: "inf-statsd:1:1"
+
 replay:
   image: vungle/replay
   links:

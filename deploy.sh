@@ -9,6 +9,7 @@ then
     docker push vungle/replay
   else
     echo "Pushing to tag $CIRCLE_SHA1"
+    docker build -t vungle/replay:$CIRCLE_SHA1 .
     docker push vungle/replay:$CIRCLE_SHA1
   fi
 else
