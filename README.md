@@ -14,7 +14,9 @@ https://www.docker.com/toolbox
 1. use s3 to download logs
 `aws s3 cp "s3://vungle-logs/raw_logs/secor_backup/as-reportAds/dt=2015-09-15/hr=07" log --recursive`
 
-1. Set your code to read from the kafka server `$(docker-machine ip dev):9092"` or `$(docker-machine ip dev):2181"` for zookeeper.
+1. Set your code to connect to kafka or zookeeper, run the following to get the address:
+  * zookeeper `echo $(docker-machine ip $(docker-machine active))$(dc ps | grep zookeeper | awk '{ print $5}' | grep -o  '\:[0-9]\+')`
+  * kafka `echo $(docker-machine ip $(docker-machine active))$(dc ps | grep kafka | awk '{ print $5}' | grep -o  '\:[0-9]\+')`
 
 ### Running
 
