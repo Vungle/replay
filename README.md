@@ -16,7 +16,7 @@ https://www.docker.com/toolbox
 
 1. Set your code to connect to kafka or zookeeper, run the following to get the address:
   * zookeeper `echo $(docker-machine ip $(docker-machine active))$(dc ps | grep zookeeper | awk '{ print $5}' | grep -o  '\:[0-9]\+')`
-  * kafka `echo $(docker-machine ip $(docker-machine active))$(dc ps | grep kafka | awk '{ print $5}' | grep -o  '\:[0-9]\+')`
+  * kafka `echo $(docker-machine ip $(docker-machine active))$(dc ps | grep kafka | awk '{ print $8}' | grep -o  '\:[0-9]\+')`
 
 ### Running
 
